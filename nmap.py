@@ -12,19 +12,21 @@ def executeScript():
     ]
     os.system("sudo tcpdump -vv -w networktraffic.cap &")
     for i in range(len(ip_addr)):
+        #Replace "." with "-" in IP adderss
+        ip_address = str(ip_addr[i].replace(".", "-"))
+        #Create folders for the IP-address       
+        os.system("mkdir IP_" + ip_address)
         for j in range(len(flags)):
             #The nmap command
             command = "sudo nmap " +  str(ip_addr[i]) + " " + str(flags[j])
 
             #The name of the outputfiles
             executionTime = str(datetime.datetime.now())[8:16].replace(" ", "").replace(":", "") #Timenumber (Tidsnummer)
-            ip_address = str(ip_addr[i].replace(".", "-"))       #Replace "." with "-" in IP adderss
             outputFileName = "OUT(" + ip_address + "(" + flags[j][1:] + "))(" + executionTime + ")"
-
-            #Create folders for the IP-address
-            os.system("mkdir " + ip_address)
+            
+            
             #Execute nmap. Place 
-            os.system(str(command + " -oA " + outputFileName))         #Execute nmap
+            os.system(str(command + " -oA ./IP_" + ip_address + "/" + outputFileName))         #Execute nmap
     os.system("sudo pkill -9 -f tcpdump")
         
         
@@ -41,9 +43,7 @@ def execAtTime(execTime):
 
 
 def main():
-    os.system("sudo rm out*")
-
-    execTime = "13:19:15"             #CHANGE ME
+    os.system("sudo rm -rf IP_*")
 
     title = open("./resources/title.txt", "r")
     print(title.read())
