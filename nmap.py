@@ -46,7 +46,7 @@ def main():
 
     execTime = "13:19:15"             #CHANGE ME
 
-    title = open(".\\resources\\title.txt", "r")
+    title = open("./resources/title.txt", "r")
     print(title.read())
     print("Enter a time for the script to be executed (Format: HH:MM:SS):")
     execTime = input(" >> ")
