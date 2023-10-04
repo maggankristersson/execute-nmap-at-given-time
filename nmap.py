@@ -22,11 +22,12 @@ def executeScript():
 
             #The name of the outputfiles
             executionTime = str(datetime.datetime.now())[8:16].replace(" ", "").replace(":", "") #Timenumber (Tidsnummer)
-            outputFileName = "OUT(" + ip_address + "(" + flags[j][1:] + "))(" + executionTime + ")"
+            outputFileName = "OUT" + ip_address + "" + flags[j][1:] + "" + executionTime + ""
             
             
             #Execute nmap. Place 
-            os.system(str(command + " -oA ./IP_" + ip_address + "/" + outputFileName))         #Execute nmap
+            print("Performing scan [" + j + "] on " + ip_addr[i])
+            os.system(str(command + " -oA ./IP_" + ip_address + "/" + outputFileName + "&"))         #Execute nmap
     os.system("sudo pkill -9 -f tcpdump")
         
         
