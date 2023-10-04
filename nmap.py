@@ -10,7 +10,7 @@ def executeScript():
         "-T5",
         "-Pn"
     ]
-    os.system("sudo tcpdump -vv &")
+    os.system("sudo tcpdump -vv -w networktraffic.cap &")
     for i in range(len(ip_addr)):
         for j in range(len(flags)):
             #The nmap command
@@ -25,6 +25,7 @@ def executeScript():
             os.system("mkdir" + ip_address)
             #Execute nmap. Place 
             os.system(str(command + " -oA " + outputFileName))         #Execute nmap
+    os.system("sudo pkill -9 -f tcpdump")
         
         
         
