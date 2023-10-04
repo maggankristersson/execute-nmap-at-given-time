@@ -22,7 +22,7 @@ def executeScript():
             outputFileName = "OUT(" + ip_address + "(" + flags[j][1:] + "))(" + executionTime + ")"
 
             #Create folders for the IP-address
-            os.system("mkdir" + ip_address)
+            os.system("mkdir " + ip_address)
             #Execute nmap. Place 
             os.system(str(command + " -oA " + outputFileName))         #Execute nmap
     os.system("sudo pkill -9 -f tcpdump")
