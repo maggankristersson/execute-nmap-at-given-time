@@ -1,0 +1,9 @@
+# Nmap 7.94 scan initiated Wed Oct  4 13:19:15 2023 as: nmap -T5 -oA OUT[8-8-8-8[T5]](041319) 8.8.8.8
+Nmap scan report for dns.google (8.8.8.8)
+Host is up (0.020s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+53/tcp  open  domain
+443/tcp open  https
+
+# Nmap done at Wed Oct  4 13:19:22 2023 -- 1 IP address (1 host up) scanned in 7.22 seconds
