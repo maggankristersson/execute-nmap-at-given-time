@@ -42,7 +42,6 @@ def execAtTime(execTime):
 
 def main():
     os.system("sudo rm out*")
-    os.system("sudo tcpdump -vv -o networktraffic")
 
     execTime = "13:19:15"             #CHANGE ME
 
