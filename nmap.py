@@ -32,6 +32,7 @@ def executeScript():
             #Execute nmap. Place 
             print("Performing scan [" + str(j) + "] on " + ip_addr[i])
             os.system(str(command + " -oA ./IP_" + ip_address + "/" + outputFileName))         #Execute nmap
+    print(Fore.GREEN + Style.BRIGHT + Back.WHITE + "Script Completed!")
     os.system("sudo pkill -9 -f tcpdump")
         
         
@@ -54,8 +55,9 @@ def main():
     print(Fore.RED + title.read())
     print(Fore.GREEN + "Enter a time for the script to be executed (Format: HH:MM:SS):")
     execTime = input(" >> ")
-    print(Fore.GREEN + "Script started! Executing at " + Fore.RED + execTime + Fore.GREEN + "...")
+    print(Fore.GREEN + "Script started! Executing at " + Fore.WHITE + Style.BRIGHT + execTime + Fore.GREEN + "...")
     print(Fore.GREEN + "Will capture traffic meanwhile script is running")
+    print("\n" + Fore.RED + "Traffic will be displayed in terminal and saved in folders...")
     execAtTime(execTime)
 
 main()
