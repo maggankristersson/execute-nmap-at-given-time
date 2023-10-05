@@ -10,7 +10,7 @@ def executeScript():
         "-T5",
         "-Pn"
     ]
-    os.system("sudo tcpdump -vv -w networktraffic.cap &")
+    os.system("sudo tshark -vv -w networktraffic.cap &")
     for i in range(len(ip_addr)):
         #Replace "." with "-" in IP adderss
         ip_address = str(ip_addr[i].replace(".", "-"))
