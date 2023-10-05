@@ -1,5 +1,9 @@
 import os
 import datetime
+import colorama
+from colorama import Fore, Back, Style
+
+colorama.init(autoreset=True)
 
 def executeScript():
     ip_addr = [
@@ -47,11 +51,11 @@ def main():
     os.system("sudo rm -rf IP_*")
 
     title = open("./resources/title.txt", "r")
-    print(title.read())
-    print("Enter a time for the script to be executed (Format: HH:MM:SS):")
+    print(Fore.RED + title.read())
+    print(Fore.GREEN + "Enter a time for the script to be executed (Format: HH:MM:SS):")
     execTime = input(" >> ")
-    print("Script started! Executing at " + execTime + "...")
-    print("Will capture traffic meanwhile script is running")
+    print(Fore.GREEN + "Script started! Executing at " + Fore.RED + execTime + Fore.GREEN + "...")
+    print(Fore.GREEN + "Will capture traffic meanwhile script is running")
     execAtTime(execTime)
 
 main()
