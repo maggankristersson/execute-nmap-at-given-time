@@ -7,11 +7,11 @@ colorama.init(autoreset=True)
 
 def executeScript():
     ip_addr = [
-        "8.8.8.8",
+        "8.8.8.8", #<---------------------------------------------- CHANGE ME
         "8.8.4.4"
     ]
     flags = [
-        "-T5",
+        "-T5", # <------------------------------------------------- CHANGEME 
         "-Pn"
     ]
     os.system("sudo tshark -vv -w networktraffic.cap &")
