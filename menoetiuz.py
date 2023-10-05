@@ -33,7 +33,7 @@ def executeScript():
             print("Performing scan [" + str(j) + "] on " + ip_addr[i])
             os.system(str(command + " -oA ./IP_" + ip_address + "/" + outputFileName))         #Execute nmap
     print(Fore.GREEN + Style.BRIGHT + Back.WHITE + "Script Completed!")
-    os.system("sudo pkill -9 -f tcpdump")
+    os.system("sudo pkill -9 -f tshark")
         
         
         
